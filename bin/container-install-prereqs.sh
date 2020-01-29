@@ -8,7 +8,7 @@
 # VERSION: 0.0.21
 # =====================================
 
-WORKDIR=${HOME}
+WORKDIR=/root
 TMPDIR=/tmp
 cd ${TMPDIR}
 

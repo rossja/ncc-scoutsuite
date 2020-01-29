@@ -7,9 +7,9 @@
 # VERSION: 0.0.21
 # =====================================
 
-WORKDIR=${HOME}
+WORKDIR=/root
 TMPDIR=/tmp
-AWSDIR=${HOME}/.aws
+AWSDIR=/root/.aws
 
 echo -e "\n\nAWS2 CLI Installation Starting...\n\n"
 
