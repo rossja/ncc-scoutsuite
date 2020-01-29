@@ -1,8 +1,6 @@
 # NCC-ScoutSuite
 
-[![](https://images.microbadger.com/badges/image/rossja/ncc-scoutsuite.svg)](https://microbadger.com/images/rossja/ncc-scoutsuite "Version badge courtesy of microbadger.com")
-
-[![](https://images.microbadger.com/badges/version/rossja/ncc-scoutsuite.svg)](https://microbadger.com/images/rossja/ncc-scoutsuite "Version badge courtesy of microbadger.com")
+[![](https://images.microbadger.com/badges/image/rossja/ncc-scoutsuite.svg)](https://microbadger.com/images/rossja/ncc-scoutsuite "Version badge courtesy of microbadger.com")  [![](https://images.microbadger.com/badges/version/rossja/ncc-scoutsuite.svg)](https://microbadger.com/images/rossja/ncc-scoutsuite "Version badge courtesy of microbadger.com")
 
 
 This document is the Readme from the Dockerhub project associated with the NCC Group Scoutsuite Docker Container. 
