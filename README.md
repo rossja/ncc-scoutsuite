@@ -1,5 +1,10 @@
 # NCC-ScoutSuite
 
+[![](https://images.microbadger.com/badges/image/rossja/ncc-scoutsuite.svg)](https://microbadger.com/images/rossja/ncc-scoutsuite "Get your own image badge on microbadger.com")
+
+[![](https://images.microbadger.com/badges/version/rossja/ncc-scoutsuite.svg)](https://microbadger.com/images/rossja/ncc-scoutsuite "Version badge courtesy of microbadger.com")
+
+
 This document is the Readme from the Dockerhub project associated with the NCC Group Scoutsuite Docker Container. 
 
 The authoritative documentation can be found at <https://hub.docker.com/r/rossja/ncc-scoutsuite>
