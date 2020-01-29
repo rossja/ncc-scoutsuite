@@ -1,0 +1,17 @@
+version: "3.7"
+services:
+  ncc-scoutsuite:
+    image: ubuntu:latest
+    env_file:
+      - ./config/build-labels.env
+    build:
+      context: ./src
+      dockerfile: Dockerfile
+      args:
+        - VCS_REF=${VCS_REF}
+        - VCS_URL=${VCS_URL}
+        - VERSION=${VERSION}
+        - BUILD_DATE=${BUILD_DATE}
+        - VENDOR=${VENDOR}
+        - NAME=${NAME}
+        - DESCRIPTION=${DESCRIPTION}
