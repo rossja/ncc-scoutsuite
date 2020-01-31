@@ -10,12 +10,12 @@ The authoritative documentation can be found at <https://hub.docker.com/r/rossja
 
 1. [Running the Container](#running-thecontainer)
 1. [Running Scoutsuite](#running-scoutsuite)
-  1. [Example Test](#example-test)
+    1. [Example Test](#example-test)
 1. [Accessing the Report](#report-access)
 1. [Cloud Provider Setup](#setup-providers)
-  1. [AWS](#setup-aws)
-  1. [Azure](#setup-azure)
-  1. [GCP](#setup-gcp)
+    1. [AWS](#setup-aws)
+    1. [Azure](#setup-azure)
+    1. [GCP](#setup-gcp)
 
 ## Overview
 
