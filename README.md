@@ -4,9 +4,17 @@ Build | Size | Version | Stars | Pulls | Docker Hub | License | Maintained
 ---|---|---|---|---|---|---|---
 [![Codefresh build status](https://g.codefresh.io/api/badges/build?branch=master&repoName=ncc-scoutsuite&repoOwner=rossja&pipelineName=ncc-scoutsuite-docker&accountName=rossja)](https://g.codefresh.io/repositories/rossja/ncc-scoutsuite/builds?filter=trigger:build) | [![](https://images.microbadger.com/badges/image/rossja/ncc-scoutsuite.svg)](https://microbadger.com/images/rossja/ncc-scoutsuite "Version badge courtesy of microbadger.com") | [![](https://images.microbadger.com/badges/version/rossja/ncc-scoutsuite.svg)](https://microbadger.com/images/rossja/ncc-scoutsuite "Version badge courtesy of microbadger.com") | [![Docker Stars](https://img.shields.io/docker/stars/rossja/ncc-scoutsuite.svg?style=flat-square)](https://hub.docker.com/r/rossja/ncc-scoutsuite/) | [![Docker Pulls](https://img.shields.io/docker/pulls/rossja/ncc-scoutsuite.svg?style=flat-square)](https://hub.docker.com/r/rossja/ncc-scoutsuite/) | [![Docker Hub](https://img.shields.io/badge/Docker%20Hub-rossja%2Fncc--scoutsuite-blue)](https://hub.docker.com/r/rossja/ncc-scoutsuite/) | [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause) | [![Maintained](https://img.shields.io/maintenance/yes/2020)](https://img.shields.io/maintenance/yes/2020)
 
-This document is the Readme from the Dockerhub project associated with the NCC Group Scoutsuite Docker Container. 
 
-The authoritative documentation can be found at <https://hub.docker.com/r/rossja/ncc-scoutsuite>
+## Quick Links
+
+1. [Running the Container](#running-thecontainer)
+1. [Running Scoutsuite](#running-scoutsuite)
+    1. [Example Test](#example-test)
+1. [Accessing the Report](#report-access)
+1. [Cloud Provider Setup](#setup-providers)
+    1. [AWS](#setup-aws)
+    1. [Azure](#setup-azure)
+    1. [GCP](#setup-gcp)
 
 ## Overview
 
@@ -53,8 +61,10 @@ gsutil 4.47
 kubectl 2020.01.10
 ~~~
 
+
 ----
 
+<a name="running-thecontainer" href="#"></a>
 
 ## Running The Container
 
@@ -64,8 +74,10 @@ kubectl 2020.01.10
 docker run -it rossja/ncc-scoutsuite bash
 ~~~
 
+
 ----
 
+<a name="running-scoutsuite" href="#"></a>
 
 ## Running ScoutSuite
 
@@ -107,8 +119,10 @@ The provider you want to run scout against:
 * Since this is a container, there's no GUI, and no browser, so passing the `--no-browser` probably makes sense. 
 * Likewise, setting a specific report directory using something like `--report-dir /root/scout-report` is a good idea. *(The default location is `$HOME/scoutsuite-report`)*
 
+
 ----
 
+<a name="example-test" href="#"></a>
 
 ## Example Test
 
@@ -147,8 +161,10 @@ scout aws --profile scout-user01 --no-browser --report-dir /root/scout-report
 2020-01-03 17:46:16 460837197ae9 scout[7087] INFO Creating /root/scout-report/aws-scout-user01.html
 ~~~
 
+
 ----
 
+<a name="report-access" href="#"></a>
 
 ## Accessing Report Data
 
@@ -192,6 +208,7 @@ You can shortcut this process by simply combining the `docker ps` command with t
 docker cp $(docker ps -f ancestor=rossja/ncc-scoutsuite --format "{{.ID}}"):/root/scout-report ./
 ~~~
 
+
 ----
 
 
@@ -205,11 +222,16 @@ For example, if you ran the scout tool against AWS using the profile `scout-user
 **AWS**: If you used the default AWS profile credentials, the profile name is the numerical ID portion of the ARN for the user, rather than a specific profile or user name.
 **GCP**: The scout report will be named using the project ID that was passed in.
 
+
 ----
+
+<a name="setup-providers" href="#"></a>
 
 # Cloud Provider Setup
 
 This section of the documentation outlines how to configure accounts in the various cloud providers to enable ScoutSuite to run properly.
+
+<a name="setup-aws" href="#"></a>
 
 ## AWS 
 
@@ -455,8 +477,10 @@ You can run scout either using the default AWS profile, or a specific profile:
 * To run using the default profile, simply run `scout aws`. 
 * To use a specific profile use the `--profile` flag: `scout aws --profile <profile-name>`. Because this is running inside a docker container, pass the `--no-browser` flag to prevent auto-opening the report.
 
+
 ----
 
+<a name="setup-azure" href="#"></a>
 
 ## Azure
 
@@ -478,8 +502,10 @@ Once the permissions have been set up and the CLI configured, running scout can 
 # scout azure --cli --no-browser --report-dir /root/scout-report
 ~~~
 
+
 ----
 
+<a name="setup-gcp" href="#"></a>
 
 ## Google Cloud (GCP)
 
@@ -518,3 +544,4 @@ Once the gcloud sdk is configured, running scout can be done using the following
 ~~~bash
 # scout gcp -u --project-id <project-id> --no-browser --report-dir /root/scout-report
 ~~~
+
