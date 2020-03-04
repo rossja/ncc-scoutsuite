@@ -1,7 +1,8 @@
 # NCC-ScoutSuite
 
-[![](https://images.microbadger.com/badges/image/rossja/ncc-scoutsuite.svg)](https://microbadger.com/images/rossja/ncc-scoutsuite "Version badge courtesy of microbadger.com")  [![](https://images.microbadger.com/badges/version/rossja/ncc-scoutsuite.svg)](https://microbadger.com/images/rossja/ncc-scoutsuite "Version badge courtesy of microbadger.com")
-
+Build | Size | Version | Stars | Pulls | Docker Hub | License | Maintained
+---|---|---|---|---|---|---|---
+[![Codefresh build status](https://g.codefresh.io/api/badges/build?branch=master&repoName=ncc-scoutsuite&repoOwner=rossja&pipelineName=ncc-scoutsuite-docker&accountName=rossja)](https://g.codefresh.io/repositories/rossja/ncc-scoutsuite/builds?filter=trigger:build) | [![](https://images.microbadger.com/badges/image/rossja/ncc-scoutsuite.svg)](https://microbadger.com/images/rossja/ncc-scoutsuite "Version badge courtesy of microbadger.com") | [![](https://images.microbadger.com/badges/version/rossja/ncc-scoutsuite.svg)](https://microbadger.com/images/rossja/ncc-scoutsuite "Version badge courtesy of microbadger.com") | [![Docker Stars](https://img.shields.io/docker/stars/rossja/ncc-scoutsuite.svg?style=flat-square)](https://hub.docker.com/r/rossja/ncc-scoutsuite/) | [![Docker Pulls](https://img.shields.io/docker/pulls/rossja/ncc-scoutsuite.svg?style=flat-square)](https://hub.docker.com/r/rossja/ncc-scoutsuite/) | [![Docker Hub](https://img.shields.io/badge/Docker%20Hub-rossja%2Fncc--scoutsuite-blue)](https://hub.docker.com/r/rossja/ncc-scoutsuite/) | [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause) | [![Maintained](https://img.shields.io/maintenance/yes/2020)](https://img.shields.io/maintenance/yes/2020)
 
 This document is the Readme from the Dockerhub project associated with the NCC Group Scoutsuite Docker Container. 
 
