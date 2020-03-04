@@ -5,7 +5,7 @@ services:
     volumes:
       - ./bin:/root/bin
     env_file:
-      - ./config/build-labels.env
+      - ./config/build.env
     build:
       context: ./src
       dockerfile: Dockerfile
