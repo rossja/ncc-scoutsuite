@@ -21,7 +21,7 @@ LABEL \
     org.label-schema.vendor=$VENDOR \
     org.label-schema.version=$VERSION
 
-COPY ./bin /root/
+COPY ./bin /root/bin
 
 # install the software pre-reqs
 RUN ["/bin/bash", "-c","/root/bin/container-install-prereqs.sh"]
