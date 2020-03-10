@@ -5,7 +5,7 @@
 # all the other components to run
 # =====================================
 # AUTHOR: jason.ross@nccgroup.com
-# VERSION: 0.0.21
+# VERSION: 0.1.0
 # =====================================
 
 WORKDIR=/root
@@ -21,11 +21,11 @@ echo -e "\n\nSoftware Pre-reqs Installation Starting...\n\n"
 apt-get update > /dev/null 2>&1
 apt-get install -qy \
   apt-transport-https \
+  apt-utils \
   ca-certificates \
   cmake \
   curl \
   dialog \
-  gnupg \
   gnupg \
   groff \
   less \

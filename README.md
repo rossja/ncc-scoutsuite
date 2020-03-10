@@ -74,6 +74,7 @@ kubectl 2020.01.10
 docker run -it rossja/ncc-scoutsuite bash
 ~~~
 
+* Alternatively, clone the [GitHub Repo](https://github.com/rossja/ncc-scoutsuite) and then run `docker-compose up --build` from within the source tree
 
 ----
 

@@ -4,7 +4,7 @@
 # install the Azure CLI Tools
 # =====================================
 # AUTHOR: jason.ross@nccgroup.com
-# VERSION: 0.0.21
+# VERSION: 0.1.0
 # =====================================
 
 WORKDIR=/root

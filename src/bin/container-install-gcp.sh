@@ -4,7 +4,7 @@
 # install gCloud SDK CLI Tools
 # =====================================
 # AUTHOR: jason.ross@nccgroup.com
-# VERSION: 0.0.21
+# VERSION: 0.1.0
 # =====================================
 
 WORKDIR=/root
@@ -14,7 +14,7 @@ cd ${TMPDIR}
 echo -e "\n\ngCloud SDK Installation Starting...\n\n"
 
 # add the gcp repo to apt
-echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" > /etc/apt/sources.list.d/google-cloud-sdk.list
 
 # add the gcp pubkey to apt
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -

@@ -36,7 +36,10 @@ RUN ["/bin/bash", "-c", "/root/bin/container-install-aws2.sh"]
 RUN ["/bin/bash", "-c", "/root/bin/container-install-azure.sh"]
 
 # install gCloud SDK
-RUN ["/bin/bash", "-c", "/root/bin/container-install-gcp-sh"]
+RUN ["/bin/bash", "-c", "/root/bin/container-install-gcp.sh"]
+
+# set up a helpful login message
+RUN ["/bin/bash", "-c", "echo 'cd && source /root/scoutsuite/bin/activate' >> /root/.bashrc"]
 
 # entrypoint
-CMD ["/bin/bash", "-c", "source /root/scoutsuite/bin/activate"]
+CMD ["/bin/bash"]
