@@ -1,7 +1,7 @@
 #!/bin/bash
 echo -e "\n\nbuild hook running...\n"
 source ../config/build.env
-docker build \
+BUILD_CMD="docker build \
   --build-arg VCS_REF=$VCS_REF \
   --build-arg VCS_URL=$VCS_URL \
   --build-arg VERSION=$VERSION \
@@ -10,4 +10,6 @@ docker build \
   --build-arg NAME=$NAME \
   --build-arg DESCRIPTION=$DESCRIPTION \
   --build-arg IMAGE_NAME=$IMAGE_NAME \
-  -t $IMAGE_NAME .
+  -t $IMAGE_NAME ."
+echo -e "\n\nbuilding image using:\n$BUILD_CMD"
+exec $BUILD_CMD
