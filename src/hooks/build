@@ -10,6 +10,7 @@ BUILD_CMD="docker build \
   --build-arg NAME=$NAME \
   --build-arg DESCRIPTION=\"$DESCRIPTION\" \
   --build-arg IMAGE_NAME=$IMAGE_NAME \
-  -t $IMAGE_NAME ."
+  -t $IMAGE_NAME \
+  ."
 echo -e "\n\nbuilding image using:\n$BUILD_CMD"
 exec $BUILD_CMD
