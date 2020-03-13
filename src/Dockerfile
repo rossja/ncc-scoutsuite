@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:19.10
 
 MAINTAINER jason.ross@nccgroup.com
 
@@ -10,7 +10,7 @@ ARG VENDOR
 ARG NAME
 ARG DESCRIPTION
 
- # Build-time metadata as defined at http://label-schema.org
+# Build-time metadata as defined at http://label-schema.org
 LABEL \
     org.label-schema.schema-version="1.0" \
     org.label-schema.build-date=$BUILD_DATE \
