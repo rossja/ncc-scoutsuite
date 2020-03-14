@@ -9,8 +9,8 @@ BUILD_CMD="docker build \
   --build-arg VERSION=$VERSION \
   --build-arg BUILD_DATE=$BUILD_DATE \
   --build-arg NAME=$NAME \
+  --build-arg VENDOR=$VENDOR \
   ."
-  # --build-arg VENDOR=$VENDOR \
   # --build-arg DESCRIPTION=$DESCRIPTION \
   # --build-arg IMAGE_NAME=$IMAGE_NAME \
   
