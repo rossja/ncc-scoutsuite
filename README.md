@@ -76,7 +76,7 @@ kubectl 2020.01.10
 docker run -it rossja/ncc-scoutsuite bash
 ~~~
 
-* Alternatively, clone the [GitHub Repo](https://github.com/rossja/ncc-scoutsuite) and then run `docker-compose up --build` from within the source tree
+* Alternatively, clone the [GitHub Repo](https://github.com/rossja/ncc-scoutsuite) and then run `docker-compose up --build` from within the source tree, then run it.
 
 ----
 
@@ -84,14 +84,9 @@ docker run -it rossja/ncc-scoutsuite bash
 
 ## Running ScoutSuite
 
-Once the CLI for the environment you are testing has been configured and the appropriate credentials set up (see below for more info on how to do this), we can run ScoutSuite in the container:
+Once the CLI for the environment you are testing has been configured and the appropriate credentials set up (see below for more info on how to do this), we can run ScoutSuite in the container. As of version 0.1.0, when you run the container you're automatically set up in the scoutsuite environment.
 
-~~~bash
-cd
-source scoutsuite/bin/activate
-~~~
-
-You should notice that the command prompt has changed to reflect the virtual environment, by pre-pending the name of the virtual environment (scoutsuite) to the prompt: 
+You should see that the command prompt reflects this virtual environment, by pre-pending the name of the virtual environment (scoutsuite) to the prompt: 
 
 ~~~bash
 root@1350ede02c47:~# source scoutsuite/bin/activate
@@ -547,4 +542,3 @@ Once the gcloud sdk is configured, running scout can be done using the following
 ~~~bash
 # scout gcp -u --project-id <project-id> --no-browser --report-dir /root/scout-report
 ~~~
-
