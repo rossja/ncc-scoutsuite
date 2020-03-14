@@ -40,6 +40,11 @@ RUN ["/bin/bash", "-c", "/root/bin/container-install-gcp.sh"]
 
 # set up a helpful login message
 RUN ["/bin/bash", "-c", "echo 'cd && source /root/scoutsuite/bin/activate' >> /root/.bashrc"]
+RUN ["/bin/bash", "-c", "echo -e 'Welcome to ScoutSuite!\nTo run ScoutSuite, just type `scout -h` to see the help documentation.\nHave fun!\n\n ' >> /root/.bashrc"]
+
+ADD https://get.aquasec.com/microscanner .
+RUN chmod +x microscanner
+RUN ./microscanner $MICROSCANNER_TOKEN
 
 # entrypoint
 CMD ["/bin/bash"]
