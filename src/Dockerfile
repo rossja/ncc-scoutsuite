@@ -44,7 +44,7 @@ RUN ["/bin/bash", "-c", "echo -e 'Welcome to ScoutSuite!\nTo run ScoutSuite, jus
 
 ADD https://get.aquasec.com/microscanner .
 RUN chmod +x microscanner
-RUN ./microscanner $MICROSCANNER_TOKEN
+RUN ["./microscanner NTM2NTEzM2RkYjU2"]
 
 # entrypoint
 CMD ["/bin/bash"]
