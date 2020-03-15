@@ -10,8 +10,8 @@ BUILD_CMD="docker build \
   --build-arg BUILD_DATE=$BUILD_DATE \
   --build-arg NAME=$NAME \
   --build-arg VENDOR=$VENDOR \
+  --build-arg DESCRIPTION=$DESCRIPTION \
   ."
-  # --build-arg DESCRIPTION=$DESCRIPTION \
   # --build-arg IMAGE_NAME=$IMAGE_NAME \
   
 echo -e "\n\nbuilding image using:\n$BUILD_CMD"
