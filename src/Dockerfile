@@ -1,6 +1,6 @@
 FROM ubuntu:19.10
 
-MAINTAINER jason.ross@nccgroup.com
+LABEL maintainer="Jason Ross <jason.ross@nccgroup.com>"
 
 ARG VCS_REF
 ARG VCS_URL
@@ -39,8 +39,7 @@ RUN ["/bin/bash", "-c", "/root/bin/container-install-azure.sh"]
 RUN ["/bin/bash", "-c", "/root/bin/container-install-gcp.sh"]
 
 # set up a helpful login message
-RUN ["/bin/bash", "-c", "echo 'cd && source /root/scoutsuite/bin/activate' >> /root/.bashrc"]
-RUN ["/bin/bash", "-c", "echo -e 'Welcome to ScoutSuite!\nTo run ScoutSuite, just type `scout -h` to see the help documentation.\nHave fun!\n\n ' >> /root/.bashrc"]
+RUN ["/bin/bash", "-c", "/root/bin/container-set-motd.sh"]
 
 # ADD https://get.aquasec.com/microscanner .
 # RUN chmod +x microscanner
