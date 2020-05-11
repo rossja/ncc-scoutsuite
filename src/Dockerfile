@@ -27,19 +27,19 @@ COPY ./bin /root/bin
 RUN ["/bin/bash", "-c","/root/bin/container-install-prereqs.sh"]
 
 # install AWS2
-FROM builder as aws2
+FROM builder AS aws2
 RUN ["/bin/bash", "-c", "/root/bin/container-install-aws2.sh"]
 
 # install Azure CLI
-FROM aws2 as azure
+FROM aws2 AS azure
 RUN ["/bin/bash", "-c", "/root/bin/container-install-azure.sh"]
 
 # install gCloud SDK
-FROM azure as gcloud
+FROM azure AS gcloud
 RUN ["/bin/bash", "-c", "/root/bin/container-install-gcp.sh"]
 
 # install ScoutsuiteA
-FROM gcloud as scoutsuite
+FROM builder AS scoutsuite
 RUN ["/bin/bash", "-c", "/root/bin/container-install-scoutsuite.sh"]
 
 # Add container security checks to make sure we're solid
@@ -50,7 +50,7 @@ RUN ["/bin/bash", "-c", "/root/bin/container-install-scoutsuite.sh"]
 # RUN ["./microscanner NTM2NTEzM2RkYjU2"]
 
 # set up the venv and leave users with a helpful login message
-FROM scoutsuite as final
+FROM scoutsuite AS final
 RUN ["/bin/bash", "-c", "/root/bin/container-set-motd.sh"]
 
 # entrypoint
