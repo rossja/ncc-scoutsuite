@@ -42,11 +42,6 @@ if [ ! -d ${AWSDIR} ]; then
     [default]
     region = us-east-1
     output = json
-    EOF
-
-    # create the credentials template
-    cat <<'EOF' >${AWSDIR}/credentials
-    [default]
     aws_access_key_id = <access-key>
     aws_secret_access_key = <secret key>
 EOF
