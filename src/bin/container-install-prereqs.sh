@@ -15,6 +15,10 @@ cd ${TMPDIR}
 
 echo -e "\n\nSoftware Pre-reqs Installation Starting...\n\n"
 
+# =====================================
+# make sure the timezone gets set to UTC
+# =====================================
+ln -fs /usr/share/zoneinfo/Etc/UTC /etc/localtime
 
 # =====================================
 # set up the pre-reqs
@@ -38,5 +42,8 @@ apt-get install -qy \
   vim \
   virtualenv \
   virtualenvwrapper
- 
+
+# reconfigure the tzdata package to make sure it picks up the UTC bit
+dpkg-reconfigure --frontend noninteractive tzdata
+
 echo -e "\n\nSoftware Pre-reqs Installation Complete!\n\n"
