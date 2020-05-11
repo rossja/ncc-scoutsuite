@@ -1,4 +1,4 @@
-FROM ubuntu:19.10
+FROM ubuntu:20.04 AS build
 
 LABEL maintainer="Jason Ross <jason.ross@nccgroup.com>"
 
@@ -26,9 +26,6 @@ COPY ./bin /root/bin
 # install the software pre-reqs
 RUN ["/bin/bash", "-c","/root/bin/container-install-prereqs.sh"]
 
-# install Scoutsuite
-RUN ["/bin/bash", "-c", "/root/bin/container-install-scoutsuite.sh"]
-
 # install AWS2
 RUN ["/bin/bash", "-c", "/root/bin/container-install-aws2.sh"]
 
@@ -37,6 +34,10 @@ RUN ["/bin/bash", "-c", "/root/bin/container-install-azure.sh"]
 
 # install gCloud SDK
 RUN ["/bin/bash", "-c", "/root/bin/container-install-gcp.sh"]
+
+# install ScoutsuiteA
+FROM build as scoutsuite
+RUN ["/bin/bash", "-c", "/root/bin/container-install-scoutsuite.sh"]
 
 # set up a helpful login message
 RUN ["/bin/bash", "-c", "/root/bin/container-set-motd.sh"]
