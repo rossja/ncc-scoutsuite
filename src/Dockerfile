@@ -1,4 +1,4 @@
-FROM ubuntu:20.04 AS build
+FROM ubuntu:20.04 AS builder
 
 LABEL maintainer="Jason Ross <jason.ross@nccgroup.com>"
 
@@ -27,24 +27,31 @@ COPY ./bin /root/bin
 RUN ["/bin/bash", "-c","/root/bin/container-install-prereqs.sh"]
 
 # install AWS2
+FROM builder as aws2
 RUN ["/bin/bash", "-c", "/root/bin/container-install-aws2.sh"]
 
 # install Azure CLI
+FROM aws2 as azure
 RUN ["/bin/bash", "-c", "/root/bin/container-install-azure.sh"]
 
 # install gCloud SDK
+FROM azure as gcloud
 RUN ["/bin/bash", "-c", "/root/bin/container-install-gcp.sh"]
 
 # install ScoutsuiteA
-FROM build as scoutsuite
+FROM gcloud as scoutsuite
 RUN ["/bin/bash", "-c", "/root/bin/container-install-scoutsuite.sh"]
 
-# set up a helpful login message
-RUN ["/bin/bash", "-c", "/root/bin/container-set-motd.sh"]
-
+# Add container security checks to make sure we're solid
+# This currently fails in the autobuild, so leaving it out for now
+# FROM scoutsuite as secscan
 # ADD https://get.aquasec.com/microscanner .
 # RUN chmod +x microscanner
 # RUN ["./microscanner NTM2NTEzM2RkYjU2"]
+
+# set up the venv and leave users with a helpful login message
+FROM scoutsuite as final
+RUN ["/bin/bash", "-c", "/root/bin/container-set-motd.sh"]
 
 # entrypoint
 CMD ["/bin/bash"]
