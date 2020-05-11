@@ -39,7 +39,7 @@ FROM azure AS gcloud
 RUN ["/bin/bash", "-c", "/root/bin/container-install-gcp.sh"]
 
 # install ScoutsuiteA
-FROM builder AS scoutsuite
+FROM gcloud AS scoutsuite
 RUN ["/bin/bash", "-c", "/root/bin/container-install-scoutsuite.sh"]
 
 # Add container security checks to make sure we're solid
