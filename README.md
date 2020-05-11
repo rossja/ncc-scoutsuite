@@ -22,7 +22,9 @@
 
 [ScoutSuite](https://github.com/nccgroup/ScoutSuite) is a Python based tool published and maintained by NCC Group, for use in cloud security assessments.
 This repository is an Ubuntu based container that comes with all pre-requisite software required to run ScoutSuite. It's based on the Ubuntu 20.04 docker base.
+
 The current version of scoutsuite installed in the container is: `Scout Suite 5.8.1`
+
 The following CLI tools are also installed:
 
 * **AWS (version 2)**:
