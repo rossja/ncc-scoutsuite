@@ -20,47 +20,46 @@
 
 ## Overview
 
-[ScoutSuite](https://github.com/nccgroup/ScoutSuite) is a Python based tool published and maintained by NCC Group, for use in cloud security assessments. 
+[ScoutSuite](https://github.com/nccgroup/ScoutSuite) is a Python based tool published and maintained by NCC Group, for use in cloud security assessments.
+This repository is an Ubuntu based container that comes with all pre-requisite software required to run ScoutSuite. It's based on the Ubuntu 20.04 docker base.
+The current version of scoutsuite installed in the container is: `Scout Suite 5.8.1`
+The following CLI tools are also installed:
 
-This repository is an Ubuntu based container that comes with all pre-requisite software required to run ScoutSuite. It's based on the Ubuntu 19.10 docker base.
-
-The following CLI tools are also installed: 
-
-* **AWS (version 2)**: 
+* **AWS (version 2)**:
 
 ~~~bash
-aws-cli/2.0.0dev3 Python/3.7.3 Linux/4.19.76-linuxkit botocore/2.0.0dev2
+aws-cli/2.0.12 Python/3.7.3 Linux/4.19.76-linuxkit botocore/2.0.0dev16
 ~~~
 
 * **Azure**:  
 
 ~~~bash
-azure-cli                         2.0.80
+azure-cli                          2.5.1
 
 command-modules-nspkg              2.0.3
-core                              2.0.80
+core                               2.5.1
 nspkg                              3.0.4
 telemetry                          1.0.4
 
-Python location '/usr/bin/python3'
+Python location '/opt/az/bin/python3'
 Extensions directory '/root/.azure/cliextensions'
 
-Python (Linux) 3.6.9 (default, Nov  7 2019, 10:44:02)
-[GCC 8.3.0]
+Python (Linux) 3.6.5 (default, Apr 30 2020, 06:22:36)
+[GCC 9.2.1 20191008]
 ~~~
 
 * **GCP**:
 
 ~~~bash
-Google Cloud SDK 276.0.0
-alpha 2020.01.10
-app-engine-python 1.9.88
-app-engine-python-extras 1.9.88
-beta 2020.01.10
-bq 2.0.52
-core 2020.01.10
-gsutil 4.47
-kubectl 2020.01.10
+Google Cloud SDK 291.0.0
+alpha 2020.05.01
+app-engine-python 1.9.90
+app-engine-python-extras 1.9.90
+beta 2020.05.01
+bq 2.0.57
+core 2020.05.01
+gsutil 4.50
+kubectl 2020.05.01
 ~~~
 
 
