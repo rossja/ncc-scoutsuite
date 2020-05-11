@@ -6,6 +6,7 @@
 # AUTHOR: jason.ross@nccgroup.com
 # VERSION: 0.1.0
 # =====================================
+export DEBIAN_FRONTEND=noninteractive
 
 WORKDIR=/root
 TMPDIR=/tmp
