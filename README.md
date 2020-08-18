@@ -82,10 +82,10 @@ There are two ways to run the ScoutSuite Docker image:
 
 1. Grab the image from DockerHub and run it: `docker run -it rossja/ncc-scoutsuite bash`
 1. Build the container from this source:
-  1. Clone the [ScoutSuite GitHub Repo](https://github.com/nccgroup/ScoutSuite)
-  1. Change to the `ScoutSuite/container/docker` directory
-  1. Run `docker-compose up --build` to create the container
-  1. Run ScoutSuite in the container using `docker run -it scoutsuite bash`.
+    * Clone the [ScoutSuite GitHub Repo](https://github.com/nccgroup/ScoutSuite)
+    * Change to the `ScoutSuite/container/docker` directory
+    * Run `docker-compose up --build` to create the container
+    * Run ScoutSuite in the container using `docker run -it scoutsuite bash`.
 
 ----
 
