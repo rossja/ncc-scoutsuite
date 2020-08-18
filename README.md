@@ -21,9 +21,10 @@
 ## Overview
 
 [ScoutSuite](https://github.com/nccgroup/ScoutSuite) is a Python based tool published and maintained by NCC Group, for use in cloud security assessments.
-This repository is an Ubuntu based container that comes with all pre-requisite software required to run ScoutSuite. It's based on the Ubuntu 20.04 docker base.
+This container comes with all pre-requisite software required to run ScoutSuite. It's based on the Ubuntu 20.10 docker base.
+Work is underway to integrate this into the official ScoutSuite repository (see <https://github.com/nccgroup/ScoutSuite/issues/713>).
 
-The current version of scoutsuite installed in the container is: `Scout Suite 5.8.1`
+The current version of ScoutSuite installed in the [DockerHub image](https://hub.docker.com/r/rossja/ncc-scoutsuite) is: `Scout Suite 5.9.1`
 
 The following CLI tools are also installed:
 
@@ -71,13 +72,14 @@ kubectl 2020.05.01
 
 ## Running The Container
 
-* Grab the image and run it: 
+There are two ways to run the ScoutSuite Docker image: 
 
-~~~bash
-docker run -it rossja/ncc-scoutsuite bash
-~~~
-
-* Alternatively, clone the [GitHub Repo](https://github.com/rossja/ncc-scoutsuite) and then run `docker-compose up --build` from within the source tree, then run it.
+1. Grab the image from DockerHub and run it: `docker run -it rossja/ncc-scoutsuite bash`
+1. Build the container from this source:
+  1. Clone the [ScoutSuite GitHub Repo](https://github.com/nccgroup/ScoutSuite)
+  1. Change to the `ScoutSuite/container/docker` directory
+  1. Run `docker-compose up --build` to create the container
+  1. Run ScoutSuite in the container using `docker run -it scoutsuite bash`.
 
 ----
 
@@ -85,16 +87,18 @@ docker run -it rossja/ncc-scoutsuite bash
 
 ## Running ScoutSuite
 
-Once the CLI for the environment you are testing has been configured and the appropriate credentials set up (see below for more info on how to do this), we can run ScoutSuite in the container. As of version 0.1.0, when you run the container you're automatically set up in the scoutsuite environment.
+Once the CLI for the environment you are testing has been configured and the appropriate credentials set up (see the wiki for more info on how to do this), you can run ScoutSuite in the container. As of version 0.1.0, when you run the container you're automatically set up in the scoutsuite environment.
 
-You should see that the command prompt reflects this virtual environment, by pre-pending the name of the virtual environment (scoutsuite) to the prompt: 
+You should see that the command prompt reflects this virtual environment, with the name of the virtual environment (scoutsuite) preceding the root prompt: `(scoutsuite) root@1350ede02c47:~#`
+
+If you need to manually restart the virtual environment, you can do this using the activate script in `/root/scoutsuite/bin/activate`: 
 
 ~~~bash
 root@1350ede02c47:~# source scoutsuite/bin/activate
 (scoutsuite) root@1350ede02c47:~#
 ~~~
 
-You can verify that the installation worked using the command `scout --help`, which should provide help for the tool.
+You can verify that the installation is working by using the command `scout --help`, which should provide help for the tool.
 
 ~~~bash
 (scoutsuite) root@1350ede02c47:~# scout --help

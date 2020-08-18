@@ -1,4 +1,4 @@
-FROM ubuntu:20.04 AS builder
+FROM ubuntu:20.10 AS builder
 
 LABEL maintainer="Jason Ross <jason.ross@nccgroup.com>"
 
@@ -9,6 +9,7 @@ ARG BUILD_DATE
 ARG VENDOR
 ARG NAME
 ARG DESCRIPTION
+ARG DEBIAN_FRONTEND=noninteractive
 
 # Build-time metadata as defined at http://label-schema.org
 LABEL \
