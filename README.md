@@ -31,38 +31,44 @@ The following CLI tools are also installed:
 * **AWS (version 2)**:
 
 ~~~bash
-aws-cli/2.0.12 Python/3.7.3 Linux/4.19.76-linuxkit botocore/2.0.0dev16
+(scoutsuite) root@9d3f1d542712:~# aws --version
+aws-cli/2.0.40 Python/3.7.3 Linux/4.19.76-linuxkit exe/x86_64.ubuntu.20
 ~~~
 
 * **Azure**:  
 
 ~~~bash
-azure-cli                          2.5.1
+(scoutsuite) root@9d3f1d542712:~# az --version
+azure-cli                         2.10.1
 
-command-modules-nspkg              2.0.3
-core                               2.5.1
-nspkg                              3.0.4
+core                              2.10.1
 telemetry                          1.0.4
 
-Python location '/opt/az/bin/python3'
+Python location '/usr/bin/python3'
 Extensions directory '/root/.azure/cliextensions'
 
-Python (Linux) 3.6.5 (default, Apr 30 2020, 06:22:36)
-[GCC 9.2.1 20191008]
+Python (Linux) 3.8.5 (default, Aug  2 2020, 15:09:07)
+[GCC 10.2.0]
+
+Legal docs and information: aka.ms/AzureCliLegal
+
+
+Your CLI is up-to-date.
 ~~~
 
 * **GCP**:
 
 ~~~bash
-Google Cloud SDK 291.0.0
-alpha 2020.05.01
-app-engine-python 1.9.90
-app-engine-python-extras 1.9.90
-beta 2020.05.01
-bq 2.0.57
-core 2020.05.01
-gsutil 4.50
-kubectl 2020.05.01
+(scoutsuite) root@9d3f1d542712:~# gcloud --version
+Google Cloud SDK 306.0.0
+alpha 2020.08.14
+app-engine-python 1.9.91
+app-engine-python-extras 1.9.91
+beta 2020.08.14
+bq 2.0.59
+core 2020.08.14
+gsutil 4.52
+kubectl 1.15.11
 ~~~
 
 
