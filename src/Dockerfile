@@ -49,7 +49,7 @@ RUN ["/bin/bash", "-c", "/tmp/container-install-ibmcloud.sh"]
 
 # install Scoutsuite
 FROM ibmcloud AS scoutsuite
-COPY ./bin/container-install-prereqs.sh /tmp
+COPY ./bin/container-install-scoutsuite.sh /tmp
 RUN ["/bin/bash", "-c", "/tmp/container-install-scoutsuite.sh"]
 
 # Add container security checks to make sure we're solid
