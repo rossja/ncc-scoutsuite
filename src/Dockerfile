@@ -61,6 +61,8 @@ RUN ["/bin/bash", "-c", "/tmp/container-install-scoutsuite.sh"]
 
 # set up the venv and leave users with a helpful login message
 FROM scoutsuite AS final
+RUN mkdir -p /root/bin
+COPY ./bin/container-set-motd.sh /root/bin
 RUN ["/bin/bash", "-c", "/root/bin/container-set-motd.sh"]
 
 # entrypoint
