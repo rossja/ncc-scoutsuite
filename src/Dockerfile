@@ -34,7 +34,7 @@ RUN ["/bin/bash", "-c", "/tmp/container-install-aws2.sh"]
 
 # install Azure CLI
 FROM aws2 AS azure
-COPY ./bin/container-install-zaure.sh /tmp
+COPY ./bin/container-install-azure.sh /tmp
 RUN ["/bin/bash", "-c", "/tmp/container-install-azure.sh"]
 
 # install gCloud SDK
