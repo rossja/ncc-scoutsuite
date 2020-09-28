@@ -1,4 +1,4 @@
-FROM ubuntu:20.10 AS builder
+FROM ubuntu:20.10 AS prereqs
 
 LABEL maintainer="Jason Ross <jason.ross@nccgroup.com>"
 
@@ -22,33 +22,42 @@ LABEL \
     org.label-schema.vendor=$VENDOR \
     org.label-schema.version=$VERSION
 
-COPY ./bin /root/bin
+COPY ./bin/container-install-prereqs.sh /tmp
 
 # install the software pre-reqs
-RUN ["/bin/bash", "-c","/root/bin/container-install-prereqs.sh"]
+RUN ["/bin/bash", "-c","/tmp/container-install-prereqs.sh"]
 
 # install AWS2
-FROM builder AS aws2
-RUN ["/bin/bash", "-c", "/root/bin/container-install-aws2.sh"]
+FROM prereqs AS aws2
+COPY ./bin/container-install-aws2.sh /tmp
+RUN ["/bin/bash", "-c", "/tmp/container-install-aws2.sh"]
 
 # install Azure CLI
 FROM aws2 AS azure
-RUN ["/bin/bash", "-c", "/root/bin/container-install-azure.sh"]
+COPY ./bin/container-install-zaure.sh /tmp
+RUN ["/bin/bash", "-c", "/tmp/container-install-azure.sh"]
 
 # install gCloud SDK
 FROM azure AS gcloud
-RUN ["/bin/bash", "-c", "/root/bin/container-install-gcp.sh"]
+COPY ./bin/container-install-gcp.sh /tmp
+RUN ["/bin/bash", "-c", "/tmp/container-install-gcp.sh"]
 
-# install ScoutsuiteA
-FROM gcloud AS scoutsuite
-RUN ["/bin/bash", "-c", "/root/bin/container-install-scoutsuite.sh"]
+# install gCloud SDK
+FROM gcloud AS ibmcloud
+COPY ./bin/container-install-ibmcloud.sh /tmp
+RUN ["/bin/bash", "-c", "/tmp/container-install-ibmcloud.sh"]
+
+# install Scoutsuite
+FROM ibmcloud AS scoutsuite
+COPY ./bin/container-install-prereqs.sh /tmp
+RUN ["/bin/bash", "-c", "/tmp/container-install-scoutsuite.sh"]
 
 # Add container security checks to make sure we're solid
 # This currently fails in the autobuild, so leaving it out for now
 # FROM scoutsuite as secscan
 # ADD https://get.aquasec.com/microscanner .
 # RUN chmod +x microscanner
-# RUN ["./microscanner NTM2NTEzM2RkYjU2"]
+# RUN ["./microscanner ${AQUA_TOKEN"]
 
 # set up the venv and leave users with a helpful login message
 FROM scoutsuite AS final

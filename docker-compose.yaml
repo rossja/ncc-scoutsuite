@@ -2,8 +2,6 @@ version: "3.7"
 services:
   ncc-scoutsuite:
     image: rossja/ncc-scoutsuite:latest
-    volumes:
-      - ./bin:/root/bin
     env_file:
       - ./config/build.env
     build:
