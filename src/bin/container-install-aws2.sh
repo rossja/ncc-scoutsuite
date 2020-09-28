@@ -1,10 +1,8 @@
 #!/bin/bash
 
 # =====================================
-# container-scoutsuite-install.sh
-# =====================================
 # AUTHOR: jason.ross@nccgroup.com
-# VERSION: 0.1.0
+# VERSION: 0.1.1
 # =====================================
 export DEBIAN_FRONTEND=noninteractive
 
