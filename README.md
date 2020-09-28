@@ -31,50 +31,45 @@ The following CLI tools are also installed:
 * **AWS (version 2)**:
 
 ~~~bash
-(scoutsuite) root@9d3f1d542712:~# aws --version
-aws-cli/2.0.40 Python/3.7.3 Linux/4.19.76-linuxkit exe/x86_64.ubuntu.20
+(scoutsuite) root@9ae0e093c879:~# aws --version
+aws-cli/2.0.52 Python/3.7.3 Linux/4.19.76-linuxkit exe/x86_64.ubuntu.20
 ~~~
 
 * **Azure**:
 
 ~~~bash
-(scoutsuite) root@9d3f1d542712:~# az --version
-azure-cli                         2.10.1
+(scoutsuite) root@9ae0e093c879:~# az --version
+azure-cli                         2.12.1
 
-core                              2.10.1
-telemetry                          1.0.4
+core                              2.12.1
+telemetry                          1.0.6
 
-Python location '/usr/bin/python3'
+Python location '/opt/az/bin/python3'
 Extensions directory '/root/.azure/cliextensions'
 
-Python (Linux) 3.8.5 (default, Aug  2 2020, 15:09:07)
-[GCC 10.2.0]
-
-Legal docs and information: aka.ms/AzureCliLegal
-
-
-Your CLI is up-to-date.
+Python (Linux) 3.6.10 (default, Sep 28 2020, 08:40:37)
+[GCC 9.2.1 20191008]
 ~~~
 
 * **GCP**:
 
 ~~~bash
-(scoutsuite) root@9d3f1d542712:~# gcloud --version
-Google Cloud SDK 306.0.0
-alpha 2020.08.14
+(scoutsuite) root@9ae0e093c879:~# gcloud --version
+Google Cloud SDK 311.0.0
+alpha 2020.09.18
 app-engine-python 1.9.91
 app-engine-python-extras 1.9.91
-beta 2020.08.14
-bq 2.0.59
-core 2020.08.14
-gsutil 4.52
+beta 2020.09.18
+bq 2.0.60
+core 2020.09.18
+gsutil 4.53
 kubectl 1.15.11
 ~~~
 
 * **IBM Cloud**
 
 ~~~bash
-(scoutsuite) root@fd6a13a35158:~# ibmcloud --version
+(scoutsuite) root@9ae0e093c879:~# ibmcloud --version
 ibmcloud version 1.2.3+3577aee6-2020-09-25T14:34:09+00:00
 ~~~
 
