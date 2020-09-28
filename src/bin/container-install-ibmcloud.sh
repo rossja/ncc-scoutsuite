@@ -24,13 +24,18 @@ cd ${TMPDIR}/Bluemix_CLI
 
 # install common CLI plugins
 plugins=(\
+"catalogs-management" \
+"cloud-databases" \
+"cloud-dns-services" \
+"cloud-functions" \
+"cloud-object-storage" \
 "container-registry" \
 "container-service" \
-"cloud-functions" \
-"cloud-databases" \
-"cloud-object-storage" \
-"cloud-dns-services" \
+"doi" \
+"key-protect" \
+"observe-service" \
 "push-notifications" \
+"vpc-infrastructure" \
 )
 
 for plugin in ${plugins[@]}; do
