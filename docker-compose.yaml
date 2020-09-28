@@ -3,7 +3,7 @@ services:
   ncc-scoutsuite:
     image: rossja/ncc-scoutsuite:latest
     env_file:
-      - ./config/build.env
+      - ./config/build.env.example
     build:
       context: ./src
       dockerfile: Dockerfile

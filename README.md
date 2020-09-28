@@ -1,8 +1,8 @@
 # NCC-ScoutSuite
 
 [![Docker build status](https://img.shields.io/docker/cloud/build/rossja/ncc-scoutsuite)]( https://img.shields.io/docker/cloud/build/rossja/ncc-scoutsuite)
-[![](https://images.microbadger.com/badges/image/rossja/ncc-scoutsuite.svg)](https://microbadger.com/images/rossja/ncc-scoutsuite) 
-[![](https://images.microbadger.com/badges/version/rossja/ncc-scoutsuite.svg)](https://microbadger.com/images/rossja/ncc-scoutsuite) 
+[![](https://images.microbadger.com/badges/image/rossja/ncc-scoutsuite.svg)](https://microbadger.com/images/rossja/ncc-scoutsuite)
+[![](https://images.microbadger.com/badges/version/rossja/ncc-scoutsuite.svg)](https://microbadger.com/images/rossja/ncc-scoutsuite)
 [![Docker Pulls](https://img.shields.io/docker/pulls/rossja/ncc-scoutsuite.svg?style=flat-square)](https://hub.docker.com/r/rossja/ncc-scoutsuite/)
 [![Docker Hub](https://img.shields.io/badge/Docker%20Hub-rossja%2Fncc--scoutsuite-blue)](https://hub.docker.com/r/rossja/ncc-scoutsuite/)
 
@@ -35,7 +35,7 @@ The following CLI tools are also installed:
 aws-cli/2.0.40 Python/3.7.3 Linux/4.19.76-linuxkit exe/x86_64.ubuntu.20
 ~~~
 
-* **Azure**:  
+* **Azure**:
 
 ~~~bash
 (scoutsuite) root@9d3f1d542712:~# az --version
@@ -71,6 +71,12 @@ gsutil 4.52
 kubectl 1.15.11
 ~~~
 
+* **IBM Cloud**
+
+~~~bash
+(scoutsuite) root@fd6a13a35158:~# ibmcloud --version
+ibmcloud version 1.2.3+3577aee6-2020-09-25T14:34:09+00:00
+~~~
 
 ----
 
@@ -78,7 +84,7 @@ kubectl 1.15.11
 
 ## Running The Container
 
-There are two ways to run the ScoutSuite Docker image: 
+There are two ways to run the ScoutSuite Docker image:
 
 1. Grab the image from DockerHub and run it: `docker run -it rossja/ncc-scoutsuite bash`
 1. Build the container from this source:
@@ -97,7 +103,7 @@ Once the CLI for the environment you are testing has been configured and the app
 
 You should see that the command prompt reflects this virtual environment, with the name of the virtual environment (scoutsuite) preceding the root prompt: `(scoutsuite) root@1350ede02c47:~#`
 
-If you need to manually restart the virtual environment, you can do this using the activate script in `/root/scoutsuite/bin/activate`: 
+If you need to manually restart the virtual environment, you can do this using the activate script in `/root/scoutsuite/bin/activate`:
 
 ~~~bash
 root@1350ede02c47:~# source scoutsuite/bin/activate
@@ -125,7 +131,7 @@ The provider you want to run scout against:
 
 ### Recommended Parameters
 
-* Since this is a container, there's no GUI, and no browser, so passing the `--no-browser` probably makes sense. 
+* Since this is a container, there's no GUI, and no browser, so passing the `--no-browser` probably makes sense.
 * Likewise, setting a specific report directory using something like `--report-dir /root/scout-report` is a good idea. *(The default location is `$HOME/scoutsuite-report`)*
 
 
@@ -135,7 +141,7 @@ The provider you want to run scout against:
 
 ## Example Test
 
-The example below demonstrates running scout against AWS, using the profile `scout-user01`, saving the report to the directory `/root/scout-report`: 
+The example below demonstrates running scout against AWS, using the profile `scout-user01`, saving the report to the directory `/root/scout-report`:
 
 ~~~bash
 scout aws --profile scout-user01 --no-browser --report-dir /root/scout-report
@@ -182,7 +188,7 @@ The report is stored in the directory specified with the `--report-dir` flag
 
 ### TL;DR
 
-You can shortcut the process below by simply combining the `docker ps` command with the `docker cp` command like so: 
+You can shortcut the process below by simply combining the `docker ps` command with the `docker cp` command like so:
 
 ~~~bash
 docker cp $(docker ps -f ancestor=rossja/ncc-scoutsuite --format "{{.ID}}"):/root/scout-report ./
@@ -205,13 +211,13 @@ Container ID: a8d70ee4ced8
 docker cp <container-id>:</path/to/report> </path/to/local/copy>
 ~~~
 
-* For example, if the container ID is `a8d70ee4ced8`, and the report is stored in `/root/scout-report` on that container, the following command could be used to copy the report data from the container to the current directory: 
+* For example, if the container ID is `a8d70ee4ced8`, and the report is stored in `/root/scout-report` on that container, the following command could be used to copy the report data from the container to the current directory:
 
 ~~~bash
 docker cp a8d70ee4ced8:/root/scout-report ./
 ~~~
 
-You can shortcut this process by simply combining the `docker ps` command with the `docker cp` command like so: 
+You can shortcut this process by simply combining the `docker ps` command with the `docker cp` command like so:
 
 ~~~bash
 docker cp $(docker ps -f ancestor=rossja/ncc-scoutsuite --format "{{.ID}}"):/root/scout-report ./
@@ -223,10 +229,10 @@ docker cp $(docker ps -f ancestor=rossja/ncc-scoutsuite --format "{{.ID}}"):/roo
 
 ## Viewing the Output File
 
-The report itself can be viewed using a web browser, by opening the file `./scout-report/aws-<profile>.html`. 
-For example, if you ran the scout tool against AWS using the profile `scout-user01`, the report HTML file is at `./scout-report/aws-scout-01.html`. 
+The report itself can be viewed using a web browser, by opening the file `./scout-report/aws-<profile>.html`.
+For example, if you ran the scout tool against AWS using the profile `scout-user01`, the report HTML file is at `./scout-report/aws-scout-01.html`.
 
-**NOTES**: 
+**NOTES**:
 
 **AWS**: If you used the default AWS profile credentials, the profile name is the numerical ID portion of the ARN for the user, rather than a specific profile or user name.
 **GCP**: The scout report will be named using the project ID that was passed in.
@@ -242,7 +248,7 @@ This section of the documentation outlines how to configure accounts in the vari
 
 <a name="setup-aws" href="#"></a>
 
-## AWS 
+## AWS
 
 ### IAM Configuration
 
@@ -411,7 +417,7 @@ output = json
 ~~~
 
 * default profile only `$HOME/.aws/credentials` example:
-	
+
 ~~~yaml
 [default]
 aws_access_key_id = <access-key>
@@ -420,9 +426,9 @@ aws_secret_access_key = <secret key>
 
 #### Using Multiple AWS Profiles
 
-If you need to create specific profiles, you can do this by passing the `--profile` flag to the `config` command of the AWS CLI. 
+If you need to create specific profiles, you can do this by passing the `--profile` flag to the `config` command of the AWS CLI.
 
-You can also simply edit the YAML in the config and credentials files. 
+You can also simply edit the YAML in the config and credentials files.
 
 For example, to create a profile called `scout-user01` in addition to the default profile, you could use the following config and credentials files:
 
@@ -439,7 +445,7 @@ output = json
 ~~~
 
 * multiple profile `$HOME/.aws/credentials` example:
-	
+
 ~~~yaml
 [default]
 aws_access_key_id = <access-key>
@@ -456,7 +462,7 @@ To test that the AWS CLI credentials have been set up correctly, you can run any
 
 `aws2 iam list-users` (or `aws2 --profile <profile-name> iam list-users` if you are using multiple profiles)
 
-You should see output similar to the following: 
+You should see output similar to the following:
 
 ~~~json
 {
@@ -483,7 +489,7 @@ You should see output similar to the following:
 
 You can run scout either using the default AWS profile, or a specific profile:
 
-* To run using the default profile, simply run `scout aws`. 
+* To run using the default profile, simply run `scout aws`.
 * To use a specific profile use the `--profile` flag: `scout aws --profile <profile-name>`. Because this is running inside a docker container, pass the `--no-browser` flag to prevent auto-opening the report.
 
 
@@ -522,7 +528,7 @@ Once the permissions have been set up and the CLI configured, running scout can 
 
 1. Create a user in the Google Cloud console, in the project that will be tested.
 2. Assign the following roles to the user: `Viewer`, `Security Reviewer`, `Stackdriver Account Viewer`.
-3. Additionally, you may need to assign the following using <https://console.developers.google.com/iam-admin/iam/project?project=[project-id]>: 
+3. Additionally, you may need to assign the following using <https://console.developers.google.com/iam-admin/iam/project?project=[project-id]>:
   - `serviceusage.services.use` for the project
   - `storage.buckets.getIamPolicy` for all buckets that should be reviewed
 4. Ensure that the `cloud resource manager API` is enabled for the project that will be tested.
@@ -544,11 +550,11 @@ Go to the following link in your browser:
 Enter verification code:
 ~~~
 
-Running the command above will provide a URL that you need to paste into a browser. Login to the Google account that has the required privileges, and you will see a verification code that you need to enter at the command prompt. This will add the credentials to the gcloud json file. 
+Running the command above will provide a URL that you need to paste into a browser. Login to the Google account that has the required privileges, and you will see a verification code that you need to enter at the command prompt. This will add the credentials to the gcloud json file.
 
 ### Running Scoutsuite
 
-Once the gcloud sdk is configured, running scout can be done using the following: 
+Once the gcloud sdk is configured, running scout can be done using the following:
 
 ~~~bash
 # scout gcp -u --project-id <project-id> --no-browser --report-dir /root/scout-report
