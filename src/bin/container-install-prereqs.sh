@@ -37,6 +37,7 @@ apt-get install -qy \
   unzip \
   vim \
   virtualenv \
-  virtualenvwrapper
+  virtualenvwrapper \
+  wget
 
 echo -e "\n\nSoftware Pre-reqs Installation Complete!\n\n"
