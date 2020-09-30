@@ -28,6 +28,7 @@ apt-get install -qy \
   dialog \
   gnupg \
   groff \
+  jq \
   less \
   lsb-release \
   nano \
