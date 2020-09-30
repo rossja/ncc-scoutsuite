@@ -9,7 +9,9 @@ ARG BUILD_DATE
 ARG VENDOR
 ARG NAME
 ARG DESCRIPTION
-ARG DEBIAN_FRONTEND=noninteractive
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TERM=linux
 
 # Build-time metadata as defined at http://label-schema.org
 LABEL \
