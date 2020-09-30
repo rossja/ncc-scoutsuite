@@ -7,6 +7,14 @@
 [![Docker Hub](https://img.shields.io/badge/Docker%20Hub-rossja%2Fncc--scoutsuite-blue)](https://hub.docker.com/r/rossja/ncc-scoutsuite/)
 
 
+## Status
+
+**ARCHIVED**
+
+Most of the point of this repo has been made moot by merging it into the [main ScoutSuite](https://github.com/nccgroup/ScoutSuite) functionality (see <https://github.com/nccgroup/ScoutSuite/issues/713>). As such, this repo is being archived.
+
+However, I still feel like there's some merit to having a handy "cloud provider auditing container", so I'm making one called [Stratus](https://github.com/rossja/stratus)!
+
 ## Quick Links
 
 1. [Running the Container](#running-thecontainer)
@@ -22,7 +30,6 @@
 
 [ScoutSuite](https://github.com/nccgroup/ScoutSuite) is a Python based tool published and maintained by NCC Group, for use in cloud security assessments.
 This container comes with all pre-requisite software required to run ScoutSuite. It's based on the Ubuntu 20.10 docker base.
-Work is underway to integrate this into the official ScoutSuite repository (see <https://github.com/nccgroup/ScoutSuite/issues/713>).
 
 The current version of ScoutSuite installed in the [DockerHub image](https://hub.docker.com/r/rossja/ncc-scoutsuite) is: `Scout Suite 5.9.1`
 
