@@ -29,8 +29,6 @@ apt-get install -qy \
   less \
   lsb-release \
   nano \
-  python3 \
-  python3-pip \
   tzdata \
   unzip \
   vim \
